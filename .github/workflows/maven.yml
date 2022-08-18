@@ -29,6 +29,14 @@ jobs:
       continue-on-error: true
       
     - name: Get Allure history
+      uses: actions/checkout@v2
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+      
+    - name: Generate Allure Report
       uses: simple-elf/allure-report-action@master
       if: always()
       id: allure-report
@@ -45,6 +53,3 @@ jobs:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages
         PUBLISH_DIR: allure-history
-      
-    - name: Generate Allure Report
-      run: mvn allure:report 
