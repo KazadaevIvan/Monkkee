@@ -5,18 +5,25 @@ default:
     - shelllocal
 
 stages:
-  - Runnig tests
-  - Generate allure report
+  - tests
+  - allure
 
-Runnig tests:
+Run ui tests:
   stage: Runnig tests
+  allow_failure: true
   script:
     - mvn clean test -DsuiteXmlFile="src/test/resources/testng.xml"
+  artifacts:
+    artifacts:
+      when: always
+      paths:
+        - target/site/allure-maven-plugin/
 
 Generate allure report:
-  stage: Generate allure report
+  stage: allure
   script:
     - mvn allure:report
+    - echo "Allure report live here - https://${CI_PROJECT_NAMESPACE}.${CI_PAGES_DOMAIN}/-/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/target/site/allure-maven-plugin/index.html"
   artifacts:
     when: always
     paths:
