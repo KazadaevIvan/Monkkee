@@ -10,8 +10,8 @@ stages:
 Regression test with Allure:
   stage: test
   script:
-    - mvn clean test
-    - mvn allure report
+    - mvn clean test -DsuiteXmlFile="src/test/resources/testng.xml"
+    - mvn allure:report
   artifacts:
     paths:
       - target/site/allure-maven-plugin/*
