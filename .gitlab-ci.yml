@@ -7,7 +7,7 @@ default:
 stages:
   - test
 
-Regression test with Allure:
+Regression test:
   stage: test
   script:
     - mvn clean test -DsuiteXmlFile="src/test/resources/testng.xml"
