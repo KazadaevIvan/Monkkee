@@ -5,15 +5,19 @@ default:
     - shelllocal
 
 stages:
-  - test
+  - Runnig tests
+  - Generate allure report
 
-Regression test:
-  stage: test
+Runnig tests:
+  stage: Runnig tests
   script:
     - mvn clean test -DsuiteXmlFile="src/test/resources/testng.xml"
-  after_script:
+
+Generate allure report:
+  stage: Generate allure report
+  script:
     - mvn allure:report
   artifacts:
     when: always
     paths:
-      - target/site/allure-maven-plugin/*
+      - target/site/allure-maven-plugin/
