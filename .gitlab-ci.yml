@@ -16,7 +16,7 @@ Run ui tests:
   artifacts:
     when: always
     paths:
-      - target/site/allure-maven-plugin/
+      - target/
 
 Generate allure report:
   stage: allure
