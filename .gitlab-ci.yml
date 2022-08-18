@@ -14,10 +14,9 @@ Run ui tests:
   script:
     - mvn clean test -DsuiteXmlFile="src/test/resources/testng.xml"
   artifacts:
-    artifacts:
-      when: always
-      paths:
-        - target/site/allure-maven-plugin/
+    when: always
+    paths:
+      - target/site/allure-maven-plugin/
 
 Generate allure report:
   stage: allure
