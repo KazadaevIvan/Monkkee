@@ -11,7 +11,9 @@ Regression test with Allure:
   stage: test
   script:
     - mvn clean test -DsuiteXmlFile="src/test/resources/testng.xml"
+  after_script:
     - mvn allure:report
   artifacts:
+    when: always
     paths:
       - target/site/allure-maven-plugin/*
