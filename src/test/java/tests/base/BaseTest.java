@@ -29,8 +29,8 @@ public class BaseTest {
     @Step("Open browser")
     @BeforeMethod
     public void setUp() {
-
         ChromeOptions options = new ChromeOptions();
+        options.setBinary("/usr/bin/google-chrome");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         driver = new ChromeDriver(options);
