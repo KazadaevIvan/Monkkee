@@ -15,25 +15,25 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
-        System.out.println(String.format("======================================== STARTING TEST %s ========================================", iTestResult.getName()));
+        System.out.printf("======================================== STARTING TEST %s ========================================%n", iTestResult.getName());
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        System.out.println(String.format("======================================== FINISHED TEST %s Duration: %ss ========================================", iTestResult.getName(),
-                getExecutionTime(iTestResult)));
+        System.out.printf("======================================== FINISHED TEST %s Duration: %ss ========================================%n", iTestResult.getName(),
+                getExecutionTime(iTestResult));
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        System.out.println(String.format("======================================== FAILED TEST %s Duration: %ss ========================================", iTestResult.getName(),
-                getExecutionTime(iTestResult)));
+        System.out.printf("======================================== FAILED TEST %s Duration: %ss ========================================%n", iTestResult.getName(),
+                getExecutionTime(iTestResult));
         takeScreenshot(iTestResult);
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-        System.out.println(String.format("======================================== SKIPPING TEST %s ========================================", iTestResult.getName()));
+        System.out.printf("======================================== SKIPPING TEST %s ========================================%n", iTestResult.getName());
         takeScreenshot(iTestResult);
     }
 
