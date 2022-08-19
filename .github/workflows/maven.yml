@@ -25,9 +25,6 @@ jobs:
       run: mvn clean install
       continue-on-error: true
       
-    - name: Generate allure report
-      run: mvn allure:report
-      
     - name: Get Allure history
       uses: actions/checkout@v2
       if: always()
