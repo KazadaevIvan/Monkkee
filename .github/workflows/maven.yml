@@ -33,8 +33,3 @@ jobs:
       run: |
           mvn allure:report
           echo ls -a
-          
-    - name: Show results
-      with:
-        name: test-results
-        path: target/site/allure-maven-plugin/index.html
