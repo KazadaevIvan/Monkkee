@@ -23,13 +23,7 @@ jobs:
     - name: Run ui tests
       run: mvn clean test -DsuiteXmlFile="src/test/resources/testng.xml"
       
-    - name: Archive test results
-      uses: actions/upload-artifact@v3
-      with:
-        name: artifacts
-        path: target/
-      
     - name: Generate allure report
       run: |
           mvn allure:report
-          echo ls -a
+          echo "D:\a\Monkkee\Monkkee\target\site\allure-maven-plugin/index.html"
