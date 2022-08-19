@@ -28,7 +28,7 @@ jobs:
         
     - name: Run ui tests
       if: always()
-      run: mvn clean install
+      run: mvn clean install -Dusername=${{ secrets.USERNAME }} -Dpassword=${{ secrets.PASSWORD }}
       continue-on-error: true
       
     - name: Get Allure history
