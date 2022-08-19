@@ -15,7 +15,6 @@
         <allure.version>2.11.2</allure.version>
         <aspectjweaver.version>1.9.1</aspectjweaver.version>
         <alluretestng.version>2.19.0</alluretestng.version>
-        <webdrivermanager.version>5.2.3</webdrivermanager.version>
     </properties>
 
     <build>
@@ -76,13 +75,6 @@
             <version>${alluretestng.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${webdrivermanager.version}</version>
-        </dependency>
-
     </dependencies>
 
 </project>
