@@ -10,7 +10,7 @@ import pages.base.BasePage;
 
 public class HomePage extends BasePage {
     private final static String HOME_PAGE_URL = "entries";
-    private final static By ENTRIES = By.className("entries");
+    private final static By SEARCH_INPUT = By.xpath("//input[@type='search']");
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -26,9 +26,9 @@ public class HomePage extends BasePage {
     @Override
     public HomePage isPageOpened() {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(ENTRIES));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(SEARCH_INPUT));
         } catch (TimeoutException e) {
-            Assert.fail("Page has not been loaded. Entries not found by locator " + ENTRIES);
+            Assert.fail("Page has not been loaded. Search input not found by locator " + SEARCH_INPUT);
         }
         return this;
     }
