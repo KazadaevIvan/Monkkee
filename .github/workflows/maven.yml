@@ -24,7 +24,7 @@ jobs:
       run: google-chrome --version
 
     - name: Setting chmod for Chrome
-      run: chmod 777 /usr/bin/google-chrome
+      run: chmod 777 src/test/resources/webdrivers/linux/chromedriver
         
     - name: Run ui tests
       if: always()
