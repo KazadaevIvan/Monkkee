@@ -33,6 +33,7 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    @Step("Login with username '{username}' and password '{password}'")
     public HomePage login(String username, String password) {
         driver.findElement(USERNAME_INPUT).sendKeys(username);
         driver.findElement(PASSWORD_INPUT).sendKeys(password);
