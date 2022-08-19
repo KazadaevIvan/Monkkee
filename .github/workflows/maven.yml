@@ -19,6 +19,12 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+
+    - name: Get chrome version
+      run: google-chrome --version
+
+    - name: Setting chmod for Chrome
+      run: chmod 777 /usr/bin/google-chrome
         
     - name: Run ui tests
       if: always()
