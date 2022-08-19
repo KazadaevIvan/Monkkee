@@ -24,6 +24,14 @@ jobs:
       run: mvn clean test -DsuiteXmlFile="src/test/resources/testng.xml"
       
     - name: Generate allure report
-      run: |
-          mvn allure:report
-          echo "D:\a\Monkkee\Monkkee\target\site\allure-maven-plugin/index.html"
+      run: mvn allure:report
+      
+    - name: Post the link to the report
+      if: always()
+      uses: Sibz/github-status-action@v1
+      with: 
+          authToken: ${{secrets.GITHUB_TOKEN}}
+          context: 'Test report'
+          state: 'success'
+          sha: ${{ github.event.pull_request.head.sha }}
+          target_url: simple-elf.github.io/github-allure-history/${{ github.run_number }}
