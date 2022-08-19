@@ -29,10 +29,11 @@ public class BaseTest {
     @Step("Open browser")
     @BeforeMethod
     public void setUp() {
-        driver = new ChromeDriver();
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginPageSteps = new LoginPageSteps(driver);
