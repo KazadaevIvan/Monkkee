@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import steps.EntryPageSteps;
+import steps.HomePageSteps;
 import steps.LoginPageSteps;
 import utils.CapabilitiesGenerator;
 import utils.PropertyReader;
@@ -18,6 +20,8 @@ public class BaseTest {
     protected static final String PASSWORD = System.getenv().getOrDefault("password", PropertyReader.getProperty("password"));
     private WebDriver driver;
     protected LoginPageSteps loginPageSteps;
+    protected HomePageSteps homePageSteps;
+    protected EntryPageSteps entryPageSteps;
 
     @Step("Open browser")
     @BeforeMethod
@@ -26,6 +30,8 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         loginPageSteps = new LoginPageSteps(driver);
+        homePageSteps = new HomePageSteps(driver);
+        entryPageSteps = new EntryPageSteps(driver);
     }
 
     @Step("Close browser")
