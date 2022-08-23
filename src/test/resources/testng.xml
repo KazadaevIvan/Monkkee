@@ -12,4 +12,10 @@
                 <class name="tests.LoginPageTest"> </class>
         </classes>
     </test>
+
+    <test name="Create entry">
+        <classes>
+            <class name="tests.HomePageTest"> </class>
+        </classes>
+    </test>
 </suite>
