@@ -11,6 +11,8 @@ import pages.base.BasePage;
 public class HomePage extends BasePage {
     private final static String HOME_PAGE_URL = "entries";
     private final static By SEARCH_INPUT = By.xpath("//input[@type='search']");
+    private final static By CREATE_AN_ENTRY_BUTTON = By.id("create-entry");
+    private final static String ENTRY_WITH_ID_TEXT = "//a[@href='#/entries/%s']/div[@ng-bind-html='entry.body']";
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -31,5 +33,16 @@ public class HomePage extends BasePage {
             Assert.fail("Page has not been loaded. Search input not found by locator " + SEARCH_INPUT);
         }
         return this;
+    }
+
+    @Step("Click Create An Entry button")
+    public EntryPage clickCreateAnEntryButton() {
+        driver.findElement(CREATE_AN_ENTRY_BUTTON).click();
+        return new EntryPage(driver);
+    }
+
+    @Step("Get entry with id {id} text")
+    public String getEntryWithIdText(String id) {
+        return driver.findElement(By.xpath(String.format(ENTRY_WITH_ID_TEXT, id))).getText();
     }
 }
