@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 abstract public class BasePage {
-    public final static String URL = "https://my.monkkee.com/#/";
+    public static final String URL = "https://my.monkkee.com/#/";
     public WebDriver driver;
     public WebDriverWait wait;
 

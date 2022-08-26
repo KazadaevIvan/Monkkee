@@ -9,13 +9,13 @@
 
     <test name="Login">
         <classes>
-                <class name="tests.LoginPageTest"> </class>
+            <class name="tests.LoginPageTest"/>
         </classes>
     </test>
 
     <test name="Create entry">
         <classes>
-            <class name="tests.HomePageTest"> </class>
+            <class name="tests.HomePageTest"/>
         </classes>
     </test>
 </suite>

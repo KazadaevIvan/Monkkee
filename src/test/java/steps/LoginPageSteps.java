@@ -7,7 +7,7 @@ import pages.LoginPage;
 import static utils.AllureUtils.takeScreenshot;
 
 public class LoginPageSteps {
-    private LoginPage loginPage;
+    private final LoginPage loginPage;
 
     public LoginPageSteps(WebDriver driver) {
         this.loginPage = new LoginPage(driver);

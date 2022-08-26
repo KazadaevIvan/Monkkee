@@ -7,7 +7,7 @@ import pages.EntryPage;
 import static utils.AllureUtils.takeScreenshot;
 
 public class EntryPageSteps {
-    private EntryPage entryPage;
+    private final EntryPage entryPage;
 
     public EntryPageSteps(WebDriver driver) {
         this.entryPage = new EntryPage(driver);

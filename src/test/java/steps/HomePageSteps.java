@@ -2,14 +2,13 @@ package steps;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
-import pages.EntryPage;
 import pages.HomePage;
 
-import static utils.AllureUtils.takeScreenshot;
 import static org.testng.Assert.assertEquals;
+import static utils.AllureUtils.takeScreenshot;
 
 public class HomePageSteps {
-    private HomePage homePage;
+    private final HomePage homePage;
 
     public HomePageSteps(WebDriver driver) {
         this.homePage = new HomePage(driver);
