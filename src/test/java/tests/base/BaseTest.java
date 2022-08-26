@@ -14,6 +14,8 @@ import utils.PropertyReader;
 
 import java.util.concurrent.TimeUnit;
 
+import static utils.AllureUtils.takeScreenshot;
+
 @Listeners(TestListener.class)
 public class BaseTest {
     protected static final String USERNAME = System.getenv().getOrDefault("username", PropertyReader.getProperty("username"));
@@ -38,6 +40,7 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
+            takeScreenshot(driver);
             driver.quit();
         }
     }
