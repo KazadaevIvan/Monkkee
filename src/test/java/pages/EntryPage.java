@@ -12,7 +12,6 @@ public class EntryPage extends BasePage {
     private static final By TEXT_INPUT = By.id("editable");
     private static final By BACK_TO_OVER_VIEW_BUTTON = By.xpath("//a[@id='back-to-overview']/i");
     private static final By SAVED_ICON = By.xpath("//span[contains(@class, 'cke_savetoggle_text') and text()='saved']");
-    private static final By TEXT_EDIT_TOOLS = By.id("cke_editable");
 
     public EntryPage(WebDriver driver) {
         super(driver);
@@ -28,9 +27,9 @@ public class EntryPage extends BasePage {
     @Override
     public EntryPage isPageOpened() {
         try {
-            wait.until(ExpectedConditions.visibilityOfElementLocated(TEXT_EDIT_TOOLS));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(SAVED_ICON));
         } catch (TimeoutException e) {
-            Assert.fail("Page has not been loaded. Text edit tools not found by locator " + TEXT_EDIT_TOOLS);
+            Assert.fail("Page has not been loaded. Saved icon not found by locator " + SAVED_ICON);
         }
         return this;
     }
