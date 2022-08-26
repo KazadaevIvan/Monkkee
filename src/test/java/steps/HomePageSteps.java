@@ -30,4 +30,12 @@ public class HomePageSteps {
         takeScreenshot(homePage.driver);
         return this;
     }
+
+    @Step("Logout user")
+    public HomePageSteps logout() {
+        homePage.clickLogoutButton()
+                .isPageOpened();
+        takeScreenshot(homePage.driver);
+        return this;
+    }
 }
