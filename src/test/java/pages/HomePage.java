@@ -9,11 +9,11 @@ import org.testng.Assert;
 import pages.base.BasePage;
 
 public class HomePage extends BasePage {
-    private final static String HOME_PAGE_URL = "entries";
-    private final static By SEARCH_INPUT = By.xpath("//input[@type='search']");
-    private final static By CREATE_AN_ENTRY_BUTTON = By.id("create-entry");
-    private final static String ENTRY_WITH_ID_TEXT = "//a[@href='#/entries/%s']/div[@ng-bind-html='entry.body']";
-    private final static By LOGOUT_BUTTON = By.xpath("//button[@class='user-menu-btn']");
+    private static final String HOME_PAGE_URL = "entries";
+    private static final By SEARCH_INPUT = By.xpath("//input[@type='search']");
+    private static final By CREATE_AN_ENTRY_BUTTON = By.id("create-entry");
+    private static final String ENTRY_WITH_ID_TEXT = "//a[@href='#/entries/%s']/div[@ng-bind-html='entry.body']";
+    private static final By LOGOUT_BUTTON = By.xpath("//button[@class='user-menu-btn']");
 
     public HomePage(WebDriver driver) {
         super(driver);

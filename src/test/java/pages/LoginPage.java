@@ -9,9 +9,9 @@ import org.testng.Assert;
 import pages.base.BasePage;
 
 public class LoginPage extends BasePage {
-    private final static By LOGIN_BUTTON = By.xpath("//button[@type='submit']");
-    private final static By USERNAME_INPUT = By.id("login");
-    private final static By PASSWORD_INPUT = By.id("password");
+    private static final By LOGIN_BUTTON = By.xpath("//button[@type='submit']");
+    private static final By USERNAME_INPUT = By.id("login");
+    private static final By PASSWORD_INPUT = By.id("password");
 
     public LoginPage(WebDriver driver) {
         super(driver);
