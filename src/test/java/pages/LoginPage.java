@@ -17,12 +17,14 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    @Step("Open Login page")
     @Override
     public LoginPage openPage() {
         driver.get(URL);
         return this;
     }
 
+    @Step("Verify Login page is opened")
     @Override
     public LoginPage isPageOpened() {
         try {
