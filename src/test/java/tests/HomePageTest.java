@@ -21,7 +21,6 @@ public class HomePageTest extends BaseTest {
         String expectedResult = "Hey! This is the first entry " + getRandomNumber();
 
         entryPageSteps.inputEntryText(expectedResult);
-        takeScreenshot(driver);
 
         String entryId = entryPageSteps.getEntryId();
         entryPageSteps.openHomePage();
