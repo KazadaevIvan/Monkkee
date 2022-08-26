@@ -4,12 +4,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
-import static utils.AllureUtils.takeScreenshot;
 import static utils.RandomNumberGenerator.getRandomNumber;
 
 public class HomePageTest extends BaseTest {
 
-    @BeforeMethod
+    @BeforeMethod(description = "Login user")
     public void login() {
         loginPageSteps.login(USERNAME, PASSWORD);
     }
