@@ -16,7 +16,6 @@ public class EntryPageSteps {
     @Step("Input Entry text {text}")
     public EntryPageSteps inputEntryText(String text) {
         entryPage
-                .isPageOpened()
                 .inputText(text)
                 .waitForEntryToBeSaved();
         takeScreenshot(entryPage.driver);
@@ -31,7 +30,8 @@ public class EntryPageSteps {
     @Step("Open Home page")
     public EntryPageSteps openHomePage() {
         entryPage
-                .clickBackToOverViewButton();
+                .clickBackToOverViewButton()
+                .isPageOpened();
         takeScreenshot(entryPage.driver);
         return this;
     }
