@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
     protected static final String USERNAME = System.getenv().getOrDefault("username", PropertyReader.getProperty("username"));
     protected static final String PASSWORD = System.getenv().getOrDefault("password", PropertyReader.getProperty("password"));
-    private WebDriver driver;
+    protected WebDriver driver;
     protected LoginPageSteps loginPageSteps;
     protected HomePageSteps homePageSteps;
     protected EntryPageSteps entryPageSteps;
