@@ -1,0 +1,1 @@
+[{"uid":"d019d6040021bfde","name":"Validation that new entry can be created","time":{"start":1661512516564,"stop":1661512522391,"duration":5827},"status":"failed","severity":"normal"},{"uid":"f3c01e8c286b5f23","name":"Validation that user could login with valid credentials","time":{"start":1661512494840,"stop":1661512498945,"duration":4105},"status":"passed","severity":"normal"}]
