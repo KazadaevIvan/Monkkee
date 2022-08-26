@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Aug 26 15:10:56 GMT 2022","Fri Aug 26 15:10:59 GMT 2022","2803","Monkkee Regression Test","Login","tests.LoginPageTest","tests.LoginPageTest","userShouldBeLoggedIn","Validation that user could login with valid credentials",""
+"failed","Fri Aug 26 15:11:25 GMT 2022","Fri Aug 26 15:11:38 GMT 2022","12942","Monkkee Regression Test","Create entry","tests.HomePageTest","tests.HomePageTest","newEntryShouldBeCreated","Validation that new entry can be created",""
